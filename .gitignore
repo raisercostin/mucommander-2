@@ -14,5 +14,7 @@ bin
 ivy*jar
 .classpath
 .project
-
+.idea
 /bin
+*.iml
+
