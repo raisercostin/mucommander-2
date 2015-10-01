@@ -12,7 +12,9 @@ allprojects { project ->
     apply plugin: 'java'
 	apply plugin: 'eclipse'
     group = 'org.mucommander'
-    version = '0.9.0'
+    version = '0.10.0'
+    //sourceCompatibility = '1.5'
+    //version = '0.9.0'
 	
 	sourceCompatibility = 1.7
 	targetCompatibility = 1.7
@@ -54,9 +56,9 @@ dependencies {
     compile project('mucommander-commons-util')
     compile project('mucommander-commons-io')
     compile project('mucommander-commons-runtime')
-    compile group: 'org.openjdk', name: 'java-extension', version: '6.0', configuration: 'runtime'
+    //compile group: 'org.openjdk', name: 'java-extension', version: '6.0', configuration: 'runtime'
 
-    compile 'jmdns:jmdns:3.1'
+    compile 'javax.jmdns:jmdns:3.4.1'
     compile 'org.slf4j:slf4j-api:1.7.7'
     compile 'ch.qos.logback:logback-core:1.1.2'
     compile 'ch.qos.logback:logback-classic:1.1.2'
@@ -64,6 +66,14 @@ dependencies {
 
     testCompile 'org.testng:testng:6.8.8'
     testCompile 'junit:junit:4.11'
+
+    // -- Dependencies awaiting cleanup (after which we can remove the dependency on ivy.mucommander.com) --
+
+    // This is a pure compile-time dependency so that muCommander can be compiled with Mac support on non-Macs.
+    // Unfortunately I don't know what the source of these Java extensions is; Apple provides its own stubs in
+    // 'com.apple:AppleJavaExtensions:1.4', but they're missing the com.apple.laf package.
+    compile group: 'org.openjdk', name: 'java-extension', version: '6.0', configuration: 'runtime'
+
 }
 
 buildscript {

@@ -14,8 +14,10 @@ bin
 ivy*jar
 .classpath
 .project
-
+.idea
 /bin
+*.iml
+
 
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm
 *.iml
