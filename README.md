@@ -1,8 +1,9 @@
-
-           _____                           _
- _____ _ _|     |___ _____ _____ ___ ___ _| |___ ___
-|     | | |   --| . |     |     | .'|   | . | -_|  _|
-|_|_|_|___|_____|___|_|_|_|_|_|_|__,|_|_|___|___|_| 
+    
+               _____                           _
+     _____ _ _|     |___ _____ _____ ___ ___ _| |___ ___
+    |     | | |   --| . |     |     | .'|   | . | -_|  _|
+    |_|_|_|___|_____|___|_|_|_|_|_|_|__,|_|_|___|___|_| 
+    
 
 trolcommander
 =============
@@ -156,6 +157,9 @@ muCommander is released under the terms of the GNU General Public License.
 Please refer to the 'license.txt' file bundled with muCommander.
 
 muCommander uses the following great third party works :
+
+- the Maven tool released under the Apache License.
+ Maven can be found at http://maven.apache.org .
 
 - the Ant library released under the Apache License.
  Ant can be found at http://ant.apache.org .
