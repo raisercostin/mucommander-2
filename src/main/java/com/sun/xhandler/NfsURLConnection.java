@@ -52,6 +52,9 @@ import java.net.URL;
 
 import sun.misc.Compare;
 import sun.misc.Sort;
+import java.util.Arrays;
+import java.util.Comparator;
+
 import sun.net.www.MessageHeader;
 import sun.net.www.MimeEntry;
 import sun.net.www.MimeTable;
@@ -197,7 +200,8 @@ public class NfsURLConnection extends URLConnection {
 
                 // Sort the entries in the directory list
                 StringCompare strComp = new StringCompare();
-                Sort.quicksort(dirList, strComp);
+//                Sort.quicksort(dirList, strComp);
+                Arrays.sort(dirList, strComp);
 
                 boolean hideDotFiles = Boolean.getBoolean("file.hidedotfiles");
             
@@ -292,19 +296,19 @@ public class NfsURLConnection extends URLConnection {
  * StringCompare implements the Compare interface.
  * Enables the comparison of two String objects.
  */
-class StringCompare implements Compare {
+class StringCompare implements Comparator<String> {
 
     /**
-     * doCompare
+     * compare
      * @param str1 - an Object that is presumes is a String Object.
      * @param str1 - an Object that is presumes is a String Object.
      * @return -1 if str1 < str2, 0 if str1 == str2, 1 if str1 > str2
      */
-    public int doCompare(Object str1, Object str2) {
+    public int compare(String str1, String str2) {
         String s1, s2;
 
-        s1 = ((String) str1).toLowerCase();
-        s2 = ((String) str2).toLowerCase();
+        s1 = str1.toLowerCase();
+        s2 = str2.toLowerCase();
         return s1.compareTo(s2);
     }
 }
